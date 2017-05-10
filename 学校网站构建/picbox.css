@@ -51,7 +51,7 @@
 	animation-play-state:paused;
 }
 .num{
-	top:362px;
+	top:370px;
 	z-index:50;
 	position:absolute;      
     border-radius:100%;  
@@ -60,7 +60,7 @@
     height:15px;  
     line-height:20px;  
     cursor:pointer;  
-    color:#fff;
+    border:2px solid white;
     opacity:0.8; 
 }
 #picbox_button1{

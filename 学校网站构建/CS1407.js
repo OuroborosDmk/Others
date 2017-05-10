@@ -3,12 +3,12 @@ window.onload=function(){
 			var newdiv=document.createElement("div");
 			newdiv.style.backgroundColor="black";
 			newdiv.style.width="100%";
-			newdiv.style.height="160px";
+			newdiv.style.height="260px";
 			newdiv.id="newdivid";
 			var body_one=document.getElementById("body_one");
 			document.body.insertBefore(newdiv,body_one);
 			var picbox=document.getElementById("picbox");
-			picbox.style.top="340px";
+			picbox.style.top="440px";
 			var newli=document.getElementById("nav1");
 			newli.className+=(newli.className.length>0?" ":"")+"get";
 		}
@@ -26,12 +26,12 @@ window.onload=function(){
 			var newdiv=document.createElement("div");
 			newdiv.style.backgroundColor="black";
 			newdiv.style.width="100%";
-			newdiv.style.height="160px";
+			newdiv.style.height="260px";
 			newdiv.id="newdivid";
 			var body_one=document.getElementById("body_one");
 			document.body.insertBefore(newdiv,body_one);
 			var picbox=document.getElementById("picbox");
-			picbox.style.top="340px";
+			picbox.style.top="440px";
 			var newli=document.getElementById("nav2");
 			newli.className+=(newli.className.length>0?" ":"")+"get";
 		}
@@ -44,6 +44,18 @@ window.onload=function(){
 			var newli=document.getElementById("nav2");
 			newli.className=newli.className.replace("get","");
 		}
+		document.getElementById("picbox_button1").onmouseover=function(){
+			var photos=document.getElementById("photos");
+			photos.style.marginLeft="0px";
+		}
+		document.getElementById("picbox_button2").onmouseover=function(){
+			var photos=document.getElementById("photos");
+			photos.style.marginLeft="-850px";
+		}
+		document.getElementById("picbox_button3").onmouseover=function(){
+			var photos=document.getElementById("photos");
+			photos.style.marginLeft="-1700px";
+		}
 		document.getElementById("change_button").onclick=function(){
 			var newdiv=document.createElement("div");
 			newdiv.style.width="100%";
@@ -51,17 +63,5 @@ window.onload=function(){
 			newdiv.id="newdivid";
 			var body_one=document.getElementById("body_change");
 			document.body.insertBefore(newdiv,body_one);
-		}
-		document.getElementById("picbox_button1").onmouseout=function(){
-			var photos=document.getElementById("photos");
-			photos.style.marginLeft="0px";
-		}
-		document.getElementById("picbox_button2").onmouseout=function(){
-			var photos=document.getElementById("photos");
-			photos.style.marginLeft="-850px";
-		}
-		document.getElementById("picbox_button3").onmouseout=function(){
-			var photos=document.getElementById("photos");
-			photos.style.marginLeft="-1700px";
 		}
 	}
