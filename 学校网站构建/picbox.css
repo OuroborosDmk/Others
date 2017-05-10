@@ -1,0 +1,74 @@
+/*轮播图*/
+@keyframes change{
+    0%,30% {margin-left:0px;}
+    35%,65% {margin-left:-850px;}
+    70%,100% {margin-left:-1700px;}   
+}
+@keyframs one{
+	100%{margin-left:0px;}
+}
+@keyframs two{
+	100%{margin-left:-850px;}
+}
+@keyframs three{
+	100%{margin-left:-1700px;}
+}
+#picbox_one{
+ 	position:absolute;
+	width:70%;
+	height:400px;
+	overflow:hidden;
+}
+#photos{
+	position:absolute;
+	width:calc(850px*3);
+	animation:change 10s ease-out infinite alternate;
+}
+#picbox_one img{
+	width:850px;
+	height:400px;
+	float:left;
+}
+#picbox_button1:hover{
+	background-color:white;
+}
+#picbox_button1:hover ~ #photos{
+	animation:one 5s ease-out forwards;
+}
+#picbox_button2:hover{
+	background-color:white;
+}
+#picbox_button2:hover ~ #photos{
+	animation:two 5s ease-out forwards;
+}
+#picbox_button3:hover{
+	background-color:white;
+}
+#picbox_button3:hover ~ #photos{
+	animation:three 5s ease-out forwards;
+}
+.num:hover ~ #photos{
+	animation-play-state:paused;
+}
+.num{
+	top:362px;
+	z-index:50;
+	position:absolute;      
+    border-radius:100%;  
+    background:none;  
+    width:15px;
+    height:15px;  
+    line-height:20px;  
+    cursor:pointer;  
+    color:#fff;
+    opacity:0.8; 
+}
+#picbox_button1{
+	right:51%;
+}
+#picbox_button2{
+	right:48%;
+}
+#picbox_button3{
+	right:45%;
+}

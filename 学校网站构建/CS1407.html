@@ -4,65 +4,40 @@
 	<title>CS1407</title>
 	<meta charset="UTF-8"/>
 	<link rel="stylesheet" href="CS1407.CSS"/>
+	<link rel="stylesheet" href="picbox.CSS"/>
+	<script type="text/javascript" src="CS1407.js"></script>
+	<script http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js></script>
 </head>
 <body>
 	<header class="header">
 		<ul class="nav" id="nav">
 			<li id="nav1"><a href="#" target="_blank">学院概况</a>
 				<div>
-				<ul>
-					<li><a href="#" target="_blank">1</a></li>
-					<li><a href="#" target="_blank">1</a></li>
-					<li><a href="#" target="_blank">1</a></li>
-					<li><a href="#" target="_blank">1</a></li>
-				</ul>
-				<ul>
-					<li><a href="#" target="_blank">1</a></li>
-					<li><a href="#" target="_blank">1</a></li>
-					<li><a href="#" target="_blank">1</a></li>
-					<li><a href="#" target="_blank">1</a></li>
-				</ul>
-				<ul>
-					<li><a href="#" target="_blank">1</a></li>
-					<li><a href="#" target="_blank">1</a></li>
-					<li><a href="#" target="_blank">1</a></li>
-					<li><a href="#" target="_blank">1</a></li>
-				</ul>
-				<ul>
-					<li><a href="#" target="_blank">1</a></li>
-					<li><a href="#" target="_blank">1</a></li>
-					<li><a href="#" target="_blank">1</a></li>
-					<li><a href="#" target="_blank">1</a></li>
-				</ul>
-				<ul>
-					<li><a href="#" target="_blank">1</a></li>
-					<li><a href="#" target="_blank">1</a></li>
-					<li><a href="#" target="_blank">1</a></li>
-					<li><a href="#" target="_blank">1</a></li>
-				</ul>
-				<ul>
-					<li><a href="#" target="_blank">1</a></li>
-					<li><a href="#" target="_blank">1</a></li>
-					<li><a href="#" target="_blank">1</a></li>
-					<li><a href="#" target="_blank">1</a></li>
-				</ul>
-				</div>	
+				</div>
 			</li>
 			<li id="nav2"><a href="#" target="_blank">师资力量</a>
+				<div>
+				</div>
 			</li>
 			<li id="nav3"><a href="#" target="_blank">科研机构</a>
+				
 			</li>
 			<li id="nav4"><a href="#" target="_blank">学生工作</a>
+				
 			</li>
 			<li id="nav5"><a href="#" target="_blank">成果展示</a>
+				
 			</li>
 			<li id="nav6"><a href="#" target="_blank">资源下载</a>
+				
 			</li>
 		</ul>
 		<div class="header_right">
 			<form>
 				<input type="text" id="searchtext"></input>
 				<button id="search">查</button>
+				<button id="signin">登录</button>
+				<div></div>
 			</form>
 		</div>
 	</header>
@@ -83,16 +58,20 @@
 		</div>
 	</div>
 	<div class="picbox" id="picbox">
-		<div id="picbox_one"></div>
+		<div id="picbox_one">
+			<div id="picbox_button1" class="num"></div>
+			<div id="picbox_button2" class="num"></div>
+			<div id="picbox_button3" class="num"></div>
+			<div id="photos">
+				<img src="../PIC/dongda3.jpg"/>
+				<img src="../PIC/东大2.jpg"/>
+				<img src="../PIC/dongda1.jpg"/>
+			</div>
+		</div>
 		<div class="picbox_two">
 			<p id="picbox_twop">"New Campus<br />New dream1"</p>
 		</div>
-		<div class="picbox_three">
-			<p id="picbox_threep">11111111</p>
-			<div id="picbox_button1"></div>
-			<div id="picbox_button2"></div>
-			<div id="picbox_button3"></div>
-		</div>
+		<div class="picbox_three"></div>
 	</div>
 	<div class="body_two">
 		<div class="body_two_left">
@@ -120,7 +99,7 @@
 				<p>知行合一“</p>
 			</div>
 			<div class="footer_toptwo">
-				<img src="./PIC/东大.PNG"/>
+				<img src="../PIC/东大.PNG"/>
 			</div>
 			<div class="footer_topthree">
 				<p>联系我们：</p>
@@ -130,56 +109,5 @@
 			<p>校址：辽宁省沈阳市和平区文化路三巷11号&nbsp&nbsp|&nbsp&nbsp邮编：110819&nbsp&nbsp|&nbsp&nbsp辽ICP备05001360号</p>
 		</div>
 	</footer>
-	<script>
-		document.getElementById("nav1").onmouseover=function(){
-			var newdiv=document.createElement("div");
-			newdiv.style.backgroundColor="black";
-			newdiv.style.width="100%";
-			newdiv.style.height="160px";
-			newdiv.id="newdivid";
-			var body_one=document.getElementById("body_one");
-			document.body.insertBefore(newdiv,body_one);
-			var picbox=document.getElementById("picbox");
-			picbox.style.top="340px";
-			var newli=document.getElementById("nav").getElementsByTagName("li");
-			for(var i in newli){
-				newli[i].className+=(newli[i].className.length>0?" ":"")+"get";
-			}
-		}
-		document.getElementById("nav1").onmouseout=function(){
-			var newdivid=document.getElementById("newdivid");
-			newdivid.style.backgroundColor="black";
-			var remove=document.body.removeChild(newdivid);
-			var picbox=document.getElementById("picbox");
-			picbox.style.top="180px";
-			var newli=document.getElementById("nav").getElementsByTagName("li");
-			for(var i in newli){
-				newli[i].className=newli[i].className.replace("get","");
-			}
-		}
-		document.getElementById("picbox_button1").onmouseover=function(){
-			document.getElementById("picbox_threep").innerHTML="33333333";
-			document.getElementById("picbox_twop").innerHTML='"New Campus<br />New dream3"';
-			document.getElementById("picbox_one").style.backgroundImage="url('./PIC/dongda3.jpg')";
-		}
-		document.getElementById("picbox_button2").onmouseover=function(){
-			document.getElementById("picbox_threep").innerHTML="22222222";
-			document.getElementById("picbox_twop").innerHTML='"New Campus<br />New dream2"';
-			document.getElementById("picbox_one").style.backgroundImage="url('./PIC/东大2.jpg')";
-		}
-		document.getElementById("picbox_button3").onmouseover=function(){
-			document.getElementById("picbox_threep").innerHTML="11111111";
-			document.getElementById("picbox_twop").innerHTML='"New Campus<br />New dream1"';
-			document.getElementById("picbox_one").style.backgroundImage="url('./PIC/dongda1.jpg')";
-		}
-		document.getElementById("change_button").onclick=function(){
-			var newdiv=document.createElement("div");
-			newdiv.style.width="100%";
-			newdiv.style.height="350px";
-			newdiv.id="newdivid";
-			var body_one=document.getElementById("body_change");
-			document.body.insertBefore(newdiv,body_one);
-		}
-	</script>
 </body>
 </html>

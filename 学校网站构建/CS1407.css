@@ -1,10 +1,12 @@
-/*通用部分*/
+		/*通用部分*/
 		*{
 			margin:0; 
 			padding:0; 
 			border:0;
 			font-size:14px;
 			font-family:"微软雅黑";
+			text-decoration:none;
+			list-style:none;
 		}
 		body{
 			min-width:1000px;
@@ -33,26 +35,22 @@
 			border-left:1px solid white;
 		}
 		.nav > li div{
-			width:500px;
+			width:607%;
 			height:160px;
-		}
-		.nav > li ul{
-			float:left;
 			display:none;
-			list-style:none;
 		}
-		.nav > li.get ul{
+		#nav1 div{
+			background-color:red;
+		}
+		#nav2 div{
+			background-color:blue;
+			margin-left:-102%;
+		}
+		#nav2.get div{
 			display:block;
-			list-style:none;
 		}
-		.nav > li ul li{
-			color:black;
-			float:none;
-			margin-right:0;
-		}
-		.nav > li ul li a{
-			color:black;
-			background-color:#C0C0C0;
+		#nav1.get div{
+			display:block;
 		}
 		.nav li a{
 			display:block;
@@ -73,18 +71,34 @@
 			margin-right:10%;
 		}
 		.header_right input{
-			width:80%;
+			width:45%;
 			height:70%;
-			margin-left:4%;
 			margin-top:3.5%;
-			border-radius:5%;
+			border-radius:5px;
 		}
-		.header_right button{
-			border-radius:10%;
-			width:9%;
+		.header_right button:nth-child(2){
+			border-radius:5px;
+			width:10%;
 			height:70%;
 			margin-right:3%;
 			margin-top:3.5%;
+		}
+		.header_right div{
+			float:right;
+			background-color:white;
+			height:40px;
+			width:0.5%;
+			margin-right:6%;
+		}
+		.header_right button:nth-child(3){
+			float:right;
+			border-radius:5px;
+			width:27%;
+			height:38px;
+			margin-right:5%;
+			background-color:blue;
+			color:white;
+			font-size:15px;
 		}
 		/*主体部分*/
 		.body_one{
@@ -95,7 +109,7 @@
 		.body_one_left{
 			margin-left:10%;
 			margin-top:20px;
-			background-image:url(./PIC/东大.PNG);
+			background-image:url(../PIC/东大.PNG);
 			background-repeat:no-repeat;
 			width:24%;
 			float:left;
@@ -131,12 +145,7 @@
 			z-index:20;
 			position:absolute;
 			top:180px;
-		}
-		#picbox_one{
-			float:left;
-			width:70%;
-			height:100%;
-			background-image:url(./PIC/dongda1.jpg);
+			overflow:hidden;
 		}
 		.picbox_two{
 			float:right;
@@ -156,7 +165,7 @@
 			height:40px;
 			width:100%;
 			opacity:0.7;
-			background-image:url(./PIC/PIC01.PNG);
+			background-image:url(../PIC/PIC01.PNG);
 			z-index:40;
 		}
 		.picbox_three p{
@@ -169,7 +178,7 @@
 			float:right;
 			border-radius:50%;
 			margin-right:1.5%;
-			margin-top:1.5%;
+			margin-top:1.1%;
 			border:2px solid white;
 			width:15px;
 			height:15px;
@@ -178,7 +187,7 @@
 			float:right;
 			border-radius:50%;
 			margin-right:1.5%;
-			margin-top:1.5%;
+			margin-top:1.1%;
 			border:2px solid white;
 			width:15px;
 			height:15px;
@@ -187,7 +196,7 @@
 			float:right;
 			border-radius:50%;
 			margin-right:1.5%;
-			margin-top:1.5%;
+			margin-top:1.1%;
 			border:2px solid white;
 			width:15px;
 			height:15px;
