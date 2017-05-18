@@ -1,0 +1,154 @@
+<!--轮播图-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<style type="text/css">
+		*{
+			border:0;
+			padding:0;
+			margin:0;
+			text-decoration:none;
+		}
+		#picbox{
+			width:600px;
+			height:400px;
+			border:2px solid black;
+			overflow:hidden;
+			position:relative;
+			left:200px;
+			top:200px;
+		}
+		#list{
+			width:3000px;
+			height:400px;
+			position:absolute;
+			z-index:1;
+		}
+		#list img{
+			width:600px;
+			height:400px;
+			float:left;
+		}
+		#buttons{
+			position:absolute;
+			width:100px;
+			height:10px;
+			bottom:10px;
+			left:250px;
+			z-index:2;
+		}
+		#buttons span{
+			cursor:pointer; 
+			float:left; 
+			border:1px solid #fff; 
+			width:10px; 
+			height:10px; 
+			border-radius:50%; 
+			background:#333; 
+			margin-right:15px;
+		}
+		#buttons .on{
+			background:orange;
+		}
+        .other{ 
+        	cursor:pointer; 
+        	display:none; 
+        	line-height:59px; 
+        	text-align:center; 
+        	font-size:36px; 
+        	font-weight:bold; 
+        	width:30px; 
+        	height:60px;  
+        	position:absolute; 
+        	z-index:2; 
+        	top:160px; 
+        	background-color:RGBA(0,0,0,.3); 
+        	color:#fff;
+        }
+        .other:hover{ 
+        	background-color:RGBA(0,0,0,.7);
+        }
+        #picbox:hover .other{
+        	display:block;
+        }
+        #prev{ 
+        	left:10px;
+        }
+        #next{ 
+        	right:10px;
+        }
+	</style>
+	<script>
+		window.onload=function(){
+			var list=document.getElementById("list");
+			var button=document.getElementById("buttons").getElementsByTagName("span");
+			var prex=document.getElementById("prev");
+			var next=document.getElementById("next");
+			var index=1;
+			var getanimation=false;//在图片翻动的时候阻止图片的翻动
+
+			function animation(changebox){
+				buttonshow();
+
+				var time=300;
+				var interval=10;
+				var speed=changebox/(time/interval);
+				getanimation=true;
+				list.style.left=parseInt(list.style.left)+changebox+"px";
+				var left=parseInt(list.style.left)+changebox;
+				if(speed<0&&parseInt(list.style.left))
+				
+			}//动画效果
+
+			prex.onclick=function(){
+				index-=1;
+				if(index==0){
+					index=3;
+				}
+				animation(600);
+				
+			}//向上一张图片翻动
+
+			next.onclick=function(){
+				index+=1;
+				if(index==4){
+					index=1;
+				}
+				animation(-600);
+				
+			}//向下一张图片翻动
+
+			function buttonshow(){
+				for(var i=0;i<button.length;i++){
+					if(button[i].className='on'){
+						button[i].className='';
+					}
+				}
+				button[index-1].className='on';
+			}//实现索引点随着图片的变动而变动
+			
+		}
+	</script>
+</head>
+<body>
+	
+<div id="picbox">
+	<div id="list" style="left:-600px;">
+		<img src="./PIC/003.jpg" alt="1"/>
+		<img src="./PIC/001.jpg" alt="1"/>
+		<img src="./PIC/002.jpg" alt="2"/>
+		<img src="./PIC/003.jpg" alt="3"/>
+		<img src="./PIC/001.jpg" alt="3"/>
+	</div>
+	<div id="buttons">
+		<span index="1" class="on"></span>
+		<span index="2"></span>
+		<span index="3"></span>
+	</div>
+	<a href="javascript:" id="prev" class="other">&lt;</a>
+	<a href="javascript:" id="next" class="other">&gt;</a>
+</div>
+
+</body>
+</html>
