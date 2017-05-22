@@ -123,8 +123,6 @@
 				execute();
 			}//动画效果
 
-
-
 			prex.onclick=function(){
 				if(getanimation){
 					return;
@@ -168,6 +166,23 @@
 			function stoptotate(){
 				timer=clearTimeout(timer);
 			}//清除定时器
+
+			for(var i=0;i<button.length;i++){
+                button[i].onmouseover=function(){
+                    if(getanimation){
+                        return;
+                    }
+                    if(this.className=='on'){
+                        return;
+                    }
+                    var myIndex=parseInt(this.getAttribute('index'));
+                    var offset=-600*(myIndex-index);
+
+                    animation(offset);
+                    index=myIndex;
+                    buttonshow();
+                }
+            }
 
 			picbox.onmouseover=stoptotate;
             picbox.onmouseout=totate;
