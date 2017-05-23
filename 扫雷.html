@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>扫雷</title>
+	<style rel="stylesheet" type="text/css">
+		*{border:0;margin:0;padding:0;text-decoration:none;}
+		.box{width:600px;height:650px;margin:0 auto;border-radius:10px;margin-top:40px;border:2px solid black;}
+		.box_one{width:100%;height:120px;}
+		.box_one p:nth-child(1){line-height:70px;text-align:center;font-size:30px;letter-spacing:5px;}
+		.box_one p:nth-child(2){text-align:center;}
+		#cheese{width:80%;height:480px;margin:0 auto;border:1px solid black;border-radius:5px;}
+		#cheese ul{list-style-type:none;display:none;width:100%;height:20%;}
+		#cheese li{float:left;width:94px;display:none;border:1px solid black;height:94px;}
+	</style>
+</head>
+<body>
+	<div class="box" id="box">
+		<div class="box_one"><p>扫雷</p><p>点击下方屏幕开始游戏，点击屏幕外暂停游戏</div>
+		<div id="cheese">
+			<ul>
+				<li></li><li></li><li></li><li></li><li></li>
+			</ul>
+			<ul>
+				<li></li><li></li><li></li><li></li><li></li>
+			</ul>
+			<ul>
+				<li></li><li></li><li></li><li></li><li></li>
+			</ul>
+			<ul>
+				<li></li><li></li><li></li><li></li><li></li>
+			</ul>
+			<ul>
+				<li></li><li></li><li></li><li></li><li></li>
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript">
+		window.onload=function(){
+			var cheese=document.getElementById("cheese");
+			var boxul=document.getElementsByTagName("ul");
+			var boxli=document.getElementsByTagName("li");
+			
+			var getstart=false;//判断游戏开始
+			
+			function start(){
+				getstart=true;
+				for(var i=0;i<boxul.length;i++){
+					boxul[i].style.display="block";
+					
+				}
+				for(var i=0;i<boxli.length;i++){
+					boxli[i].style.display="block";
+					boxli[i].style.backgroundColor="#C0C0C0";
+				}	
+			}
+
+			for(var i=0;i<boxli.length;i++){
+				boxli[i].onclick=function(){
+					this.style.backgroundColor="red";
+				}
+			}
+			/*function paused(){
+				if(getstart==false)
+					return;
+			}//禁止浮动问题*/
+			document.getElementById("cheese").onclick=function(){
+				start();
+
+			}//开始游戏
+			/*document.getElementById("box").onclick=function(){
+				paused();
+			}//暂停游戏
+			document.body.onclick=function(){
+				paused();
+			}//暂停游戏*/
+		}
+	</script>
+</body>
+</html>
