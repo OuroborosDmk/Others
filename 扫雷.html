@@ -56,10 +56,23 @@
 			}
 
 			for(var i=0;i<boxli.length;i++){
-				boxli[i].onclick=function(){
-					this.style.backgroundColor="red";
+				boxli[i].onmousedown=function(){
+					var btnNum = event.button;
+						if (btnNum==2){
+							this.style.backgroundColor="red";
+						}
 				}
-			}
+			}//右键单击
+			//onclick事件不起作用的问题
+			//onmousedown事件的持续性问题
+			for(var i=0;i<boxli.length;i++){
+				boxli[i].onmousedown=function(){
+					var btnNum = event.button;
+						if (btnNum==0){
+							this.style.backgroundColor="white";
+						}
+				}
+			}//左键单击
 			/*function paused(){
 				if(getstart==false)
 					return;
