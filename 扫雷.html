@@ -40,6 +40,7 @@
 			var cheese=document.getElementById("cheese");
 			var boxul=document.getElementsByTagName("ul");
 			var boxli=document.getElementsByTagName("li");
+			var rightindex=0;//计数右键次数
 			
 			var getstart=false;//判断游戏开始
 			
@@ -52,27 +53,29 @@
 				for(var i=0;i<boxli.length;i++){
 					boxli[i].style.display="block";
 					boxli[i].style.backgroundColor="#C0C0C0";
-				}	
+				}
 			}
+
+			cheese.oncontextmenu=function(){
+				return false;
+			}//游戏格内禁用右键菜单功能
 
 			for(var i=0;i<boxli.length;i++){
 				boxli[i].onmousedown=function(){
-					var btnNum = event.button;
-						if (btnNum==2){
-							this.style.backgroundColor="red";
-						}
+					var btnNum=event.button;
+					if(btnNum==2){
+						rightindex+=1;
+						this.style.backgroundColor="red";
+						//alert(rightindex);
+					}
+					else if(btnNum==0){
+						this.style.backgroundColor="white";
+					}
 				}
 			}//右键单击
 			//onclick事件不起作用的问题
 			//onmousedown事件的持续性问题
-			for(var i=0;i<boxli.length;i++){
-				boxli[i].onmousedown=function(){
-					var btnNum = event.button;
-						if (btnNum==0){
-							this.style.backgroundColor="white";
-						}
-				}
-			}//左键单击
+
 			/*function paused(){
 				if(getstart==false)
 					return;
