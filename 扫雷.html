@@ -5,13 +5,17 @@
 	<title>扫雷</title>
 	<style rel="stylesheet" type="text/css">
 		*{border:0;margin:0;padding:0;text-decoration:none;}
-		.box{width:600px;height:650px;margin:0 auto;border-radius:10px;margin-top:40px;border:2px solid black;}
+		.box{width:800px;height:650px;margin:0 auto;border-radius:10px;margin-top:40px;border:2px solid black;}
 		.box_one{width:100%;height:120px;}
 		.box_one p:nth-child(1){line-height:70px;text-align:center;font-size:30px;letter-spacing:5px;}
 		.box_one p:nth-child(2){text-align:center;}
-		#cheese{width:80%;height:480px;margin:0 auto;border:1px solid black;border-radius:5px;}
+		#cheese{width:480px;height:480px;margin-left:80px;border:1px solid black;border-radius:5px;float:left;}
 		#cheese ul{list-style-type:none;display:none;width:100%;height:20%;}
 		#cheese li{float:left;width:94px;display:none;border:1px solid black;height:94px;}
+		#other{float:right;height:480px;width:240px;}
+		.markindex{width:100%;height:160px;}
+		.score{width:100%;height:160px;}
+		.getinput{width:100%;height:160px;}
 	</style>
 </head>
 <body>
@@ -34,16 +38,31 @@
 				<li></li><li></li><li></li><li></li><li></li>
 			</ul>
 		</div>
+		<div id="other">
+			<div class="markindex"><p></p>标记数目<div></div></div>
+			<div class="score"><p></p>目前得分<div></div></div>
+			<div class="getinput"><input value="重新开始" type="button" id="getrefresh"></input></div>
+		</div>
 	</div>
 	<script type="text/javascript">
 		window.onload=function(){
 			var cheese=document.getElementById("cheese");
 			var boxul=document.getElementsByTagName("ul");
 			var boxli=document.getElementsByTagName("li");
+			var getrefresh=document.getElementById("getrefresh");
+			var liindex=-1;//计数右键点击了哪个方块
 			var rightindex=0;//计数右键次数
 			
 			var getstart=false;//判断游戏开始
 			
+			function refresh(){
+
+			}//重新开始
+
+			getrefresh.onclick=function(){
+				refresh();
+			}
+
 			function start(){
 				getstart=true;
 				for(var i=0;i<boxul.length;i++){
@@ -64,9 +83,16 @@
 				boxli[i].onmousedown=function(){
 					var btnNum=event.button;
 					if(btnNum==2){
-						rightindex+=1;
-						this.style.backgroundColor="red";
-						//alert(rightindex);
+						if(i==liindex){
+							this.style.backgroundColor="#C0C0C0";
+							liindex=-1;//双击右键取消标记
+						}
+						else{
+							rightindex+=1;
+							this.style.backgroundColor="red";
+							//alert(rightindex);
+							liindex=i;
+						}
 					}
 					else if(btnNum==0){
 						this.style.backgroundColor="white";
@@ -75,12 +101,13 @@
 			}//右键单击
 			//onclick事件不起作用的问题
 			//onmousedown事件的持续性问题
+			//判断点击了哪一个li的问题，解决方案一为每个li单独作标记，这样会很麻烦，解决方案二为解决BUG
 
 			/*function paused(){
 				if(getstart==false)
 					return;
 			}//禁止浮动问题*/
-			document.getElementById("cheese").onclick=function(){
+			cheese.onclick=function(){
 				start();
 
 			}//开始游戏
