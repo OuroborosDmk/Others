@@ -12,10 +12,19 @@
 		#cheese{width:480px;height:480px;margin-left:80px;border:1px solid black;border-radius:5px;float:left;}
 		#cheese ul{list-style-type:none;display:none;width:100%;height:20%;}
 		#cheese li{float:left;width:94px;display:none;border:1px solid black;height:94px;}
-		#other{float:right;height:480px;width:240px;}
-		.markindex{width:100%;height:160px;}
-		.score{width:100%;height:160px;}
-		.getinput{width:100%;height:160px;}
+		#other{float:right;height:480px;width:230px;}
+		.markindex{width:100%;height:160px;text-align:center;}
+		.markindex p{font-size:15px;}
+		.markindex div{border:1px solid black;width:50px;height:50px;margin-top:40px;margin-left:90px;text-align:center;color:red;border-radius:5px;}
+		.markindex div > p{font-size:25px;}
+		.score{width:100%;height:160px;text-align:center;}
+		.score p{font-size:15px;}
+		.score div{border:1px solid black;width:50px;height:50px;margin-top:40px;margin-left:90px;text-align:center;color:red;border-radius:5px;}
+		.score div > p{font-size:25px;}
+		.getinput{width:100%;height:160px;text-align:center;}
+		.getinput input{margin-top:20px;width:100px;height:50px;border-radius:5px;outline:none;}
+		.getinput > p{font-size:15px;}
+		.getinput div{border:1px solid black;width:50px;height:50px;margin-top:20px;margin-left:90px;text-align:center;color:red;border-radius:5px;}
 	</style>
 </head>
 <body>
@@ -23,25 +32,25 @@
 		<div class="box_one"><p>扫雷</p><p>点击下方屏幕开始游戏，点击屏幕外暂停游戏</div>
 		<div id="cheese">
 			<ul>
-				<li></li><li></li><li></li><li></li><li></li>
+				<li index="block"></li><li index="1"></li><li index="2"></li><li index="3"></li><li index="boom"></li>
 			</ul>
 			<ul>
-				<li></li><li></li><li></li><li></li><li></li>
+				<li index="1"></li><li index="2"></li><li index="block"></li><li index="2"></li><li index="block"></li>
 			</ul>
 			<ul>
-				<li></li><li></li><li></li><li></li><li></li>
+				<li index="1"></li><li index="2"></li><li index="3"></li><li index="block"></li><li index="1"></li>
 			</ul>
 			<ul>
-				<li></li><li></li><li></li><li></li><li></li>
+				<li index="2"></li><li index="1"></li><li index="boom"></li><li index="3"></li><li index="1"></li>
 			</ul>
 			<ul>
-				<li></li><li></li><li></li><li></li><li></li>
+				<li index="1"></li><li index="2"></li><li index="3"></li><li index="4"></li><li index="boom"></li>
 			</ul>
 		</div>
 		<div id="other">
-			<div class="markindex"><p></p>标记数目<div></div></div>
-			<div class="score"><p></p>目前得分<div></div></div>
-			<div class="getinput"><input value="重新开始" type="button" id="getrefresh"></input></div>
+			<div class="markindex"><p></p>标记数目<div><p id="numberofindex">0</p></div></div>
+			<div class="score"><p></p>目前得分<div><p id="sumscore">0</p></div></div>
+			<div class="getinput"><p>难度</p><div><p id="difficulty">简单</p></div><input value="重新开始" type="button" id="getrefresh"></input></div>
 		</div>
 	</div>
 	<script type="text/javascript">
@@ -50,18 +59,32 @@
 			var boxul=document.getElementsByTagName("ul");
 			var boxli=document.getElementsByTagName("li");
 			var getrefresh=document.getElementById("getrefresh");
+			var numberofindex=document.getElementById("numberofindex");
+			var sumscore=document.getElementById("sumscore");
 			var liindex=-1;//计数右键点击了哪个方块
 			var rightindex=0;//计数右键次数
-			
+			var score=0;//总得分
 			var getstart=false;//判断游戏开始
 			
 			function refresh(){
-
-			}//重新开始
+				numberofindex.innerHTML="0";
+				sumscore.innerHTML="0";
+			}//重新开始函数
 
 			getrefresh.onclick=function(){
-				refresh();
-			}
+				if(getstart==false)
+					return;
+				var getsure=confirm("确定要重新开始游戏么QAQ");
+				if(getsure==true)
+					refresh();
+				else
+					return;
+			}//点击重新开始按钮
+
+			cheese.onclick=function(){
+				start();
+
+			}//开始游戏
 
 			function start(){
 				getstart=true;
@@ -73,7 +96,7 @@
 					boxli[i].style.display="block";
 					boxli[i].style.backgroundColor="#C0C0C0";
 				}
-			}
+			}//开始游戏
 
 			cheese.oncontextmenu=function(){
 				return false;
@@ -95,22 +118,35 @@
 						}
 					}
 					else if(btnNum==0){
-						this.style.backgroundColor="white";
+						if(this.getAttribute("index")=="boom"){
+							alert("Game over!");
+							refresh();
+						}
+						else if(this.getAttribute("index")=="1"){
+							score+=1;
+							sumscore.innerHTML=score;
+						}
+						else if(this.getAttribute("index")=="2"){
+							score+=2;
+							sumscore.innerHTML=score;
+						}
+
 					}
 				}
-			}//右键单击
+			}//单击效果
 			//onclick事件不起作用的问题
 			//onmousedown事件的持续性问题
 			//判断点击了哪一个li的问题，解决方案一为每个li单独作标记，这样会很麻烦，解决方案二为解决BUG
+
+			function choosedifficulty(){
+
+			}//选择难度
 
 			/*function paused(){
 				if(getstart==false)
 					return;
 			}//禁止浮动问题*/
-			cheese.onclick=function(){
-				start();
-
-			}//开始游戏
+			
 			/*document.getElementById("box").onclick=function(){
 				paused();
 			}//暂停游戏
