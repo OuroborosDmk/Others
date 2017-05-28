@@ -69,6 +69,9 @@
 			function refresh(){
 				numberofindex.innerHTML="0";
 				sumscore.innerHTML="0";
+				for(var i=0;i<boxli.length;i++){
+					boxli[i].style.display="none";
+				}
 			}//重新开始函数
 
 			getrefresh.onclick=function(){
@@ -130,7 +133,9 @@
 							score+=2;
 							sumscore.innerHTML=score;
 						}
-
+						else if(this.getAttribute("index")=="block"){
+							this.style.backgroundColor="white";
+						}
 					}
 				}
 			}//单击效果
