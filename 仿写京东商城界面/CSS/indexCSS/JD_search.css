@@ -1,1 +1,42 @@
-JD_search.css
+.body_one{
+	height:100px;
+	width:80%;
+	margin:0 auto;
+	border:1px solid #F8F8F8;
+	background-color:#F8F8F8;
+}
+.searchbox{
+	width:800px;
+	height:35px;
+	margin-top:28px;
+	margin-left:27%;
+}
+.search{
+	float:left;
+	line-height:32px;
+	outline:none;
+	border:1px solid red;
+	height:32px;
+	width:450px;
+}
+.getsearch{
+	float:left;
+	width:40px;
+	height:32px;
+	background-color:red;
+}
+.shopping{
+	color:red;
+	display:block;
+	float:right;
+	background-color:white;
+	margin-left:50px;
+	height:32px;
+	width:200px;
+}
+.searchul{
+	list-style:none;
+}
+.searchul li{
+	float:left;
+}
