@@ -8,6 +8,7 @@
 			text-decoration:none;
 			list-style:none;
 			color:rgb(054,049,046);
+			outline:none;
 		}
 		body{
 			min-width:1000px;
@@ -150,12 +151,63 @@
 		.body_one_right{
 			width:80%;
 			height:670px;
-			background-color:rgb(160,194,200);
 			float:right;
+			background-color:rgb(160,194,200);
+		}
+		.body_one_right > p{
+			font-size:15px;
+			color:white;
+			display:block;
+			text-align:center;
+			height:50px;
+			line-height:39px;
+			background-color:rgb(160,194,200);
+			border-bottom:2px solid blue;
+		}
+		.body_one_right table{
+			height:240px;
+			width:100%;
+			text-align:center;
+			background-color:white;
+		}
+		.body_one_right button{
+			width:50%;
+			height:30px;
+			margin-top:15px;
+			margin:0 auto;
+		}
+		.body_one_right button:hover{
+			background-color:white;
+		}
+		table tr:nth-child(odd){
+			background-color:rgb(160,194,200);
+		}
+		table tr:nth-child(even){
+			background-color:rgb(211,235,241);
 		}
 		aside{
 			width:20%;
 			height:670px;
 			background-color:rgb(083,135,145);
 			float:left;
+		}
+		aside a{
+			color:white;
+		}
+		aside a:hover{
+			color:blue;
+		}
+		aside ul{
+			margin-top:20px;
+			margin-left:20px;
+		}
+		aside li{
+			font-size:15px;
+			letter-spacing:2px;
+			margin-top:20px;
+			cursor:pointer;
+			color:white;
+		}
+		aside li > ul li{
+			margin-top:0px;
 		}
