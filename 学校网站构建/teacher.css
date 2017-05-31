@@ -1,0 +1,241 @@
+/*通用部分*/
+		*{
+			margin:0; 
+			padding:0; 
+			border:0;
+			font-size:14px;
+			font-family:"微软雅黑";
+			text-decoration:none;
+			list-style:none;
+			color:rgb(054,049,046);
+			outline:none;
+		}
+		body{
+			min-width:1000px;
+			height:790px;
+			position:relative;
+			background-color:rgb(011,098,114);
+		}
+		a{
+			text-decoration:none;
+		}
+		/*页头部分*/
+		header{
+			width:100%;
+			height:40px;
+			background-color:black;
+		}
+		.nav{
+			list-style:none;
+			width:60%;
+			margin-left:10%;
+		}
+		.nav > li{
+			float:left;
+			width:16%;
+			border-right:1px solid white;
+			border-left:1px solid white;
+		}
+		.nav > li div{
+			width:607%;
+			height:260px;
+			display:none;
+		}
+		#nav1 div{
+			background-color:white;
+		}
+		#nav2 div{
+			background-color:white;
+			margin-left:-102%;
+		}
+		#nav2.get div{
+			display:block;
+		}
+		#nav1.get div{
+			display:block;
+		}
+		.nav li a{
+			display:block;
+			background-color:black;
+			color:white;
+			text-align:center;
+			line-height:40px;
+		}
+		.nav li a.on,.nav li a:hover{
+			background:white;
+			color:black; 
+		}
+		.header_right{
+			float:right;
+			background-color:black;
+			width:20%;
+			height:40px;
+			margin-right:10%;
+		}
+		.header_right input{
+			width:45%;
+			height:70%;
+			margin-top:3.5%;
+			border-radius:5px;
+		}
+		.header_right button:nth-child(2){
+			border-radius:5px;
+			width:10%;
+			height:70%;
+			margin-right:3%;
+			margin-top:3.5%;
+		}
+		.header_right div{
+			float:right;
+			background-color:white;
+			height:40px;
+			width:0.5%;
+			margin-right:6%;
+		}
+		.header_right button:nth-child(3){
+			float:right;
+			border-radius:5px;
+			width:27%;
+			height:38px;
+			margin-right:5%;
+			background-color:blue;
+			color:white;
+			font-size:15px;
+		}
+		/*body部分*/
+		.body_one{
+			position:relative;
+			top:10px;
+			width:90%;
+			margin:0 auto;
+			height:740px;
+			background-color:rgb(041,129,139);
+		}
+		.body_one_header{
+			width:100%;
+			height:70px;
+		}
+		.body_one_header > div{
+			height:50px;
+			width:50px;
+			float:left;
+			border-radius:50%;
+			overflow:hidden;
+			background-color:white;
+			margin-left:30px;
+			margin-top:10px;
+		}
+		.body_one_header img{
+			
+		}
+		.body_one_header p{
+			float:left;
+			color:white;
+			margin-left:60px;
+			line-height:69px;
+			letter-spacing:2px;
+			font-size:17px;
+		}
+		.body_one_header span{
+			color:white;
+		}
+		.body_one_header button{
+			margin-top:10px;
+			margin-right:20px;
+			float:right;
+			width:100px;
+			height:50px;
+			background-color:rgb(030,082,088);
+			color:white;
+		}
+		.body_one_right{
+			width:80%;
+			height:670px;
+			float:right;
+			background-color:rgb(160,194,200);
+		}
+		.body_one_right form{
+			width:600px;
+			margin:0 auto;
+			margin-top:100px;
+		}
+		form p:nth-child(1){
+			margin-left:70px;	
+			color:#eee;
+		}
+		form p{
+			letter-spacing:1px;
+			color:white;
+			margin-top:20px;
+		}
+		form input{
+			width:400px;
+			height:35px;
+			box-sizing:border-box;
+		}
+		form input:hover{
+			border:1px solid blue;
+		}
+		form textarea{
+			box-sizing:border-box;
+			vertical-align:text-top;
+			width:400px;
+			height:200px;
+		}
+		form textarea:hover{
+			border:1px solid blue;
+		}
+		.getfile{
+			width:120px;
+			border-radius:5px;
+			background-color:rgb(193,213,217);
+		}
+		.put{
+			height:40px;
+			margin-top:20px;
+			margin-left:12%;
+			width:90px;
+			color:white;
+			background-color:rgb(158,158,158);
+		}
+		.put:hover{
+			color:black;
+			background-color:white;
+		}
+		.cancle{
+			height:40px;
+			margin-left:15%;
+			width:90px;
+			color:white;
+			background-color:rgb(158,158,158);
+		}
+		.cancle:hover{
+			color:black;
+			background-color:white;
+		}
+		aside{
+			width:20%;
+			height:670px;
+			background-color:rgb(083,135,145);
+			float:left;
+		}
+		aside a{
+			color:white;
+		}
+		aside a:hover{
+			color:blue;
+		}
+		aside ul{
+			margin-top:20px;
+			margin-left:20px;
+		}
+		aside li{
+			font-size:15px;
+			letter-spacing:2px;
+			margin-top:20px;
+			cursor:pointer;
+			color:white;
+		}
+		aside li > ul li{
+			margin-top:0px;
+		}
