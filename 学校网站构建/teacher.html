@@ -29,11 +29,6 @@
 			</li>
 		</ul>
 		<div class="header_right">
-			<form>
-				<input type="text" id="searchtext"></input>
-				<button id="search">查</button>
-				<div></div>
-			</form>
 		</div>
 	</header>
 	<div class="body_one">
@@ -60,14 +55,74 @@
 		<div class="body_one_right">
 			<form>
 				<p>（带*的项目为必须填写）</p>
-				<p>论文标题<span style="color:rgb(148,054,052);">*</span>&nbsp;<input type="text"></input></p>
-				<p>收入期刊<span style="color:rgb(148,054,052);">*</span>&nbsp;<input type="text"></input></p>
-				<p>论文原作<span style="color:rgb(148,054,052);">*</span>&nbsp;<input type="submit" class="getfile" value="选择文件"></input></p>
-				<p>论文概述&nbsp;&nbsp;<textarea></textarea></p>
+				<p>作者<span style="color:rgb(148,054,052);">*</span>&nbsp;<input type="text"></input></p>
+				<p>年份<span style="color:rgb(148,054,052);">*</span>&nbsp;<input type="text"></input></p><br/>
+				<p class="fenleip">题录类型：</p><ul class="fenlei"><li id="li1">期刊文章</li><li id="li2">会议论文</li><li id="li3">书的章节</li><li id="li4">著作</li></ul>
+				<p><span id="span1" style="color:white;">标题</span><span style="color:rgb(148,054,052);">*</span>&nbsp;<input type="text"></input></p>
+				<p><span id="span2" style="color:white;">期刊</span><span style="color:rgb(148,054,052);">*</span>&nbsp;<input type="text"></input></p>
+				<p><span id="span3" style="color:white;">收录范围</span><span style="color:rgb(148,054,052);">*</span>&nbsp;<input type="text"></input></p>
+				<p id="input4"><span id="span4" style="color:white;">期</span><span style="color:rgb(148,054,052);">*</span>&nbsp;<input type="text"></input></p>
+				<p id="input5"><span id="span5" style="color:white;">卷</span><span style="color:rgb(148,054,052);">*</span>&nbsp;<input type="text"></input></p>
+				<p id="input6"><span id="span6" style="color:white;">页码</span><span style="color:rgb(148,054,052);">*</span>&nbsp;<input type="text"></input></p>
 				<input type="submit" value="提交" class="put"></input>
 				<input type="submit" value="取消" class="cancle"></input>
 			</form>
 		</div>
 	</div>
+	<script>
+		var span1=document.getElementById("span1");
+		var span2=document.getElementById("span2");
+		var span3=document.getElementById("span3");
+		var span4=document.getElementById("span4");
+		var span5=document.getElementById("span5");
+		var span6=document.getElementById("span6");
+		var input4=document.getElementById("input4");
+		var input5=document.getElementById("input5");
+		var input6=document.getElementById("input6");
+		document.getElementById("li1").onmouseover=function(){
+			span1.innerHTML="标题";
+			span2.innerHTML="期刊";
+			span3.innerHTML="收录范围";
+			span4.innerHTML="期";
+			span5.innerHTML="卷";
+			span6.innerHTML="页码";
+			input4.style.display="block";
+			input5.style.display="block";
+			input6.style.display="block";
+		}
+		document.getElementById("li2").onmouseover=function(){
+			span1.innerHTML="作者";
+			span2.innerHTML="年份";
+			span3.innerHTML="标题";
+			span4.innerHTML="会议名称";
+			span5.innerHTML="论文集标题";
+			span6.innerHTML="X";
+			input4.style.display="block";
+			input5.style.display="block";
+			input6.style.display="none";
+		}
+		document.getElementById("li3").onmouseover=function(){
+			span1.innerHTML="标题";
+			span2.innerHTML="编者";
+			span3.innerHTML="出版社";
+			span4.innerHTML="页码";
+			span5.innerHTML="X";
+			span6.innerHTML="X";
+			input4.style.display="block";
+			input5.style.display="none";
+			input6.style.display="none";
+		}
+		document.getElementById("li4").onmouseover=function(){
+			span1.innerHTML="书名";
+			span2.innerHTML="出版社";
+			span3.innerHTML="页数";
+			span4.innerHTML="X";
+			span5.innerHTML="X";
+			span6.innerHTML="X";
+			input4.style.display="none";
+			input5.style.display="none";
+			input6.style.display="none";
+		}
+	</script>
 </body>
 </html>

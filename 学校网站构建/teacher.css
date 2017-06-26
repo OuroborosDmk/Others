@@ -164,11 +164,14 @@
 			color:#eee;
 		}
 		form p{
+			margin-bottom:1%;
 			letter-spacing:1px;
 			color:white;
 			margin-top:20px;
 		}
 		form input{
+			margin-right:18%;
+			float:right;
 			width:400px;
 			height:35px;
 			box-sizing:border-box;
@@ -191,6 +194,7 @@
 			background-color:rgb(193,213,217);
 		}
 		.put{
+			float:left;
 			height:40px;
 			margin-top:20px;
 			margin-left:12%;
@@ -203,6 +207,7 @@
 			background-color:white;
 		}
 		.cancle{
+			margin-top:20px;
 			height:40px;
 			margin-left:15%;
 			width:90px;
@@ -238,4 +243,23 @@
 		}
 		aside li > ul li{
 			margin-top:0px;
+		}
+		/*分类部分*/
+		.fenleip{
+			float:left;
+		}
+		.fenlei{
+			margin-top:3.5%;
+			margin-left:12%;
+			margin-bottom:10%;
+		}
+		.fenlei li{
+			margin-left:5%;
+			display:block;
+			float:left;
+
+		}
+		.fenlei li:hover{
+			background-color:rgb(011,098,114);
+			color:white;
 		}
